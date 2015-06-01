@@ -4,4 +4,9 @@ var router = express.Router();
 router.get('/', function(req, res) {
   res.render('index', { title: 'Volumio Test Player' });
 });
+router.get('/debug', function(req, res) {
+  res.render('debug', { title: 'Volumio Test Player' });
+});
 module.exports = router;
+
+
