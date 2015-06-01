@@ -1,0 +1,62 @@
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <link rel="icon" href="./images/favicon.png" type="image/png">
+    <title>Volumio</title>
+    <!-- CSS -->
+    <link href="./themes/classic/css/flat-ui.css" rel="stylesheet">
+    <link href="./themes/classic/css/vendor/bootstrap.min.css" rel="stylesheet">
+    <link href="./themes/classic/css/font-awesome.css" rel="stylesheet">
+    <script src="./scripts/assets/socket.io-1.2.0.js"></script>
+    <script src="./scripts/volumio/index-socketio-controller.js"></script>
+    <script src="./themes/classic/js/flat-ui.min.js"></script>
+    <script src="./themes/classic/js/vendor/jquery.min.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="./themes/classic/js/vendor/html5shiv.js"></script>
+    <script src="./themes/classic/js/vendor/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="./scripts/assets/angular.min.js"></script>
+
+
+
+
+
+
+            <nav class="navbar navbar-inverse " role="navigation">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/"><img src="images/logo.png" class="logo" alt="Volumio"></a>
+                </div>
+
+                <div class="playback-controls">
+                    <button id="previous" class="btn btn-cmd" title="Previous"><i class="fa fa-step-backward"></i></button>
+                    <button id="stop" class="btn btn-cmd" title="Stop"><i class="fa fa-stop"></i></button>
+                    <button id="play" class="btn btn-cmd" title="Play/Pause"><i class="fa fa-play"></i></button>
+                    <button id="next" class="btn btn-cmd" title="Next"><i class="fa fa-step-forward"></i></button>
+                </div>
+                <div class="set-menu">
+                    <ul class="class="nav navbar-nav navbar-left"">
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" id="menu-settings" role="button" data-toggle="dropdown" data-target="#" href="#">MENU <i class="fa fa-th-list dx"></i></a>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="menu-settings">
+                                <li class="index"><a href="index"><i class="fa fa-play sx"></i> Main</a></li>
+                                <li class="sources"><a href="sources"><i class="fa fa-folder-open sx"></i> Library</a></li>
+                                <li class="audio-config"><a href="mpd-config"><i class="fa fa-cogs sx"></i> Playback</a></li>
+                                <li class="network"><a href="net-config"><i class="fa fa-sitemap sx"></i> Network</a></li>
+                                <li class="system"><a href="settings"><i class="fa fa-wrench sx"></i> System</a></li>
+                                <li class="credits"><a href="credits"><i class="fa fa-trophy sx"></i> Credits</a></li>
+                                <li><a href="#poweroff-modal" data-toggle="modal"><i class="fa fa-power-off sx"></i> Turn off</a></li>
+                            </ul>
+                        </li>
+
+                    </ul>
+
+                </div><!-- /.navbar-collapse -->
+            </nav><!-- /navbar -->
+
+
+</head>
