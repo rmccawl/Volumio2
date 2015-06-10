@@ -6,9 +6,13 @@
     <link rel="icon" href="./images/favicon.png" type="image/png">
     <title>Volumio</title>
     <!-- CSS -->
+    <link href="./themes/classic/css/bootstrap.min.css" rel="stylesheet">
     <link href="./themes/classic/css/flat-ui.css" rel="stylesheet">
-    <link href="./themes/classic/css/vendor/bootstrap.min.css" rel="stylesheet">
-    <link href="./themes/classic/css/font-awesome.css" rel="stylesheet">
+    <link href="./themes/classic/css/bootstrap-select.css" rel="stylesheet">
+    <link href="./themes/classic/css/bootstrap-fileupload.css" rel="stylesheet">
+    <link href="./themes/classic/css/font-awesome.min.css" rel="stylesheet">
+    <link href="./themes/classic/css/panels.css" rel="stylesheet">
+    <link href="./themes/classic/css/jquery.pnotify.default.css" rel="stylesheet">
     <script src="./scripts/assets/socket.io-1.2.0.js"></script>
     <script src="./scripts/volumio/index-socketio-controller.js"></script>
     <script src="./themes/classic/js/flat-ui.min.js"></script>
@@ -21,42 +25,41 @@
     <![endif]-->
 
     <script src="./scripts/assets/angular.min.js"></script>
-
-
-
-
-
-
-            <nav class="navbar navbar-inverse " role="navigation">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="/"><img src="images/logo.png" class="logo" alt="Volumio"></a>
-                </div>
-
-                <div class="playback-controls">
-                    <button id="previous" class="btn btn-cmd" title="Previous"><i class="fa fa-step-backward"></i></button>
-                    <button id="stop" class="btn btn-cmd" title="Stop"><i class="fa fa-stop"></i></button>
-                    <button id="play" class="btn btn-cmd" title="Play/Pause"><i class="fa fa-play"></i></button>
-                    <button id="next" class="btn btn-cmd" title="Next"><i class="fa fa-step-forward"></i></button>
-                </div>
-                <div class="set-menu">
-                    <ul class="class="nav navbar-nav navbar-left"">
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" id="menu-settings" role="button" data-toggle="dropdown" data-target="#" href="#">MENU <i class="fa fa-th-list dx"></i></a>
-                            <ul class="dropdown-menu" role="menu" aria-labelledby="menu-settings">
-                                <li class="index"><a href="index"><i class="fa fa-play sx"></i> Main</a></li>
-                                <li class="sources"><a href="sources"><i class="fa fa-folder-open sx"></i> Library</a></li>
-                                <li class="audio-config"><a href="mpd-config"><i class="fa fa-cogs sx"></i> Playback</a></li>
-                                <li class="network"><a href="net-config"><i class="fa fa-sitemap sx"></i> Network</a></li>
-                                <li class="system"><a href="settings"><i class="fa fa-wrench sx"></i> System</a></li>
-                                <li class="credits"><a href="credits"><i class="fa fa-trophy sx"></i> Credits</a></li>
-                                <li><a href="#poweroff-modal" data-toggle="modal"><i class="fa fa-power-off sx"></i> Turn off</a></li>
-                            </ul>
-                        </li>
-
-                    </ul>
-
-                </div><!-- /.navbar-collapse -->
-            </nav><!-- /navbar -->
-
-
 </head>
+<body class="section-active">
+
+<div id="menu-top" class="ui-header ui-bar-f ui-header-fixed slidedown" data-position="fixed" data-role="header" role="banner">
+    <div class="dropdown">
+        <a class="dropdown-toggle" id="menu-settings" role="button" data-toggle="dropdown" data-target="#" href="">MENU <i class="fa fa-th-list dx"></i></a>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="menu-settings">
+            <li class="index"><a href="/index"><i class="fa fa-play sx"></i> Main</a></li>
+            <li class="sources"><a href="/sources"><i class="fa fa-folder-open sx"></i> Library</a></li>
+            <li class="mpd-config"><a href="/mpd-config"><i class="fa fa-cogs sx"></i> Playback</a></li>
+            <li class="net-config"><a href="/net-config"><i class="fa fa-sitemap sx"></i> Network</a></li>
+            <li class="settings"><a href="/settings"><i class="fa fa-wrench sx"></i> System</a></li>
+            <li class="credits"><a href="/credits"><i class="fa fa-trophy sx"></i> Credits</a></li>
+            <li><a href="#poweroff-modal" data-toggle="modal"><i class="fa fa-power-off sx"></i> Turn off</a></li>
+        </ul>
+    </div>
+    <div class="playback-controls">
+        <button id="previous" class="btn btn-cmd" title="Previous"><i class="fa fa-step-backward"></i></button>
+        <button id="stop" class="btn btn-cmd" title="Stop"><i class="fa fa-stop"></i></button>
+        <button id="play" class="btn btn-cmd" title="Play/Pause"><i class="fa fa-play"></i></button>
+        <button id="next" class="btn btn-cmd" title="Next"><i class="fa fa-step-forward"></i></button>
+    </div>
+    <a class="home" href="/index"><img src="images/logo.png" class="logo" alt="Volumio"></a>
+</div>
+<div id="menu-bottom" class="ui-footer ui-bar-f ui-footer-fixed slidedown" data-position="fixed" data-role="footer"  role="banner">
+    <ul>
+        <!--if section index -->
+        <li id="open-panel-sx"><a href="#panel-sx" class="open-panel-sx" data-toggle="tab"><i class="fa fa-music sx"></i> Browse</a></li>
+        <li id="open-panel-lib"><a href="#panel-lib" class="open-panel-lib" data-toggle="tab"><i class="fa fa-columns sx"></i> Library</a></li>
+        <li id="open-playback" class="active"><a href="#playback" class="close-panels" data-toggle="tab"><i class="fa fa-play sx"></i> Playback</a></li>
+        <li id="open-panel-dx"><a href="#panel-dx" class="open-panel-dx" data-toggle="tab"><i class="fa fa-list sx"></i> Playlist</a></li>
+        <!--else -->
+        <li id="open-panel-sx"><a href="index.php#panel-sx" class="open-panel-sx"><i class="fa fa-music sx"></i> Browse</a></li>
+        <li id="open-panel-lib"><a href="index.php#panel-lib" class="open-panel-lib"><i class="fa fa-columns sx"></i> Library</a></li>
+        <li id="open-playback"><a href="index.php#playback" class="close-panels"><i class="fa fa-play sx"></i> Playback</a></li>
+        <li id="open-panel-dx"><a href="index.php#panel-dx" class="open-panel-dx"><i class="fa fa-list sx"></i> Playlist</a></li>
+    </ul>
+</div>
