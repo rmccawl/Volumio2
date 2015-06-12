@@ -128,7 +128,7 @@ jQuery(document).ready(function($){ 'use strict';
         } else {
             cmd = $(this).attr('id');
         }
-        sendCmd(cmd);
+        //sendCmd(cmd);
         //console.log('sendCmd(' + cmd + ');');
     });
 
