@@ -6,11 +6,11 @@ var libraryHistory = new Array();
 var nLibraryHistoryPosition = 0;
 
 // Define button actions --------------------------------------------
-document.getElementById('button-volumioplay').onclick = function() {emitClientEvent('volumioPlay', '');}
-document.getElementById('button-volumiopause').onclick = function() {emitClientEvent('volumioPause', '');}
-document.getElementById('button-volumiostop').onclick = function() {emitClientEvent('volumioStop', '');}
-document.getElementById('button-volumioprev').onclick = function() {emitClientEvent('volumioPrevious', '');}
-document.getElementById('button-volumionext').onclick = function() {emitClientEvent('volumioNext', '');}
+if (document.getElementById('button-volumioplay')) document.getElementById('button-volumioplay').onclick = function() {emitClientEvent('volumioPlay', '');}
+if (document.getElementById('button-volumiopause'))document.getElementById('button-volumiopause').onclick = function() {emitClientEvent('volumioPause', '');}
+if (document.getElementById('button-volumiostop'))document.getElementById('button-volumiostop').onclick = function() {emitClientEvent('volumioStop', '');}
+if (document.getElementById('button-volumioprev'))document.getElementById('button-volumioprev').onclick = function() {emitClientEvent('volumioPrevious', '');}
+if (document.getElementById('button-volumionext'))document.getElementById('button-volumionext').onclick = function() {emitClientEvent('volumioNext', '');}
 document.getElementById('button-spopupdatetracklist').onclick = function() {emitClientEvent('spopUpdateTracklist', '');}
 document.getElementById('button-volumiorebuildlibrary').onclick = function() {emitClientEvent('volumioRebuildLibrary', '');}
 document.getElementById('button-clearconsole').onclick = clearConsole;
