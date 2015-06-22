@@ -30,3 +30,6 @@ node_modules
 # Other ignores
 *.swp
 spotify-login.txt
+
+# Bower components
+http/www/components

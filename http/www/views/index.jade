@@ -1,0 +1,31 @@
+doctype html
+html
+  head
+    title(Volumio)
+  body
+    h3 Player State
+    button#button-volumioplay.control-websocket(disabled="") Play
+    button#button-volumiopause.control-websocket(disabled="") Pause
+    button#button-volumiostop.control-websocket(disabled="") Stop
+    button#button-volumioprev.control-websocket(disabled="") Prev
+    button#button-volumionext.control-websocket(disabled="") Next
+    br
+    br
+    #playerstate
+    h3 Play Queue
+    ol#div-playqueue(start="0")
+    h3 Music Library
+    button#button-libraryback.control-local(disabled="") Back
+    button#button-libraryforward.control-local(disabled="") Forward
+    #div-browsertitle
+    #div-browser
+      ol#browseview(start="0")
+    h3 Settings
+    button#button-spopupdatetracklist.control-websocket(disabled="") Refresh Spop Tracklist
+    button#button-volumiorebuildlibrary.control-websocket(disabled="") Rebuild Volumio Library
+    h3 Console
+    button#button-clearconsole Clear
+    #div-console(style="border: 1px solid black; height: 400px; overflow-y: scroll;")
+      ul#console(style="font-family: monospace;")
+    script(src="./scripts/assets/socket.io-1.2.0.js")
+    script(src="./scripts/volumio/index-socketio-controller.js")

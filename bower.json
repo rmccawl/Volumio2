@@ -1,0 +1,29 @@
+{
+  "name": "Volumio2",
+  "main": "http://volumio.org",
+  "version": "0.0.1",
+  "homepage": "https://github.com/rmccawl/Volumio2",
+  "authors": [
+    "Rory McCawl <rorymccawl@gmail.com>"
+  ],
+  "description": "Volumio 2 - Audiophile Music Player",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "volumio"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "bootstrap": "~3.3.5"
+  }
+}
