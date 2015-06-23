@@ -4,4 +4,18 @@ html
     title(Volumio)
     link(rel="stylesheet", type="text/css", href="themes/banquet/master.css")
   body
+    block nav
+        .navbar.navbar-default.navbar-fixed-top
+          .navbar-header
+            button(type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-9" aria-expanded="false")
+              span.sr-only =Toggle navigation
+              span.icon-bar
+              span.icon-bar
+              span.icon-bar
+            a.navbar-brand(href="/") Volumio
+            ul.nav.navbar-nav
+              li
+                a#button-spopupdatetracklist.control-websocket(disabled="") Refresh Spop Tracklist
+              li
+                a#button-volumiorebuildlibrary.control-websocket(disabled="") Rebuild Volumio Library
     block content
